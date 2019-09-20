@@ -5,7 +5,9 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
@@ -61,7 +63,24 @@ public class Main extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         if (actionBarDrawerToggle.onOptionsItemSelected(item)){
             return true;
-        }
+        }else if(item.getItemId() == R.id.idEntrada){
+            Intent i = new Intent(Main.this, MessagesEntrada.class);
+            startActivity(i);
+            return true;
+
+            }else if(item.getItemId() == R.id.messages){
+                Intent i = new Intent(Main.this, MensagesActivity.class);
+                startActivity(i);
+                return true;
+            }
+
+
         return super.onOptionsItemSelected(item);
     }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_toolbar, menu);
+        return true;
+    }
+
 }

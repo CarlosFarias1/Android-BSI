@@ -12,7 +12,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main">
+        <activity android:name=".TabActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MessagesEntrada"
+            android:label="Entrada"
+            android:parentActivityName=".MensagesActivity" />
+        <activity
+            android:name=".MensagesActivity"
+            android:label="Mensagem"
+            android:parentActivityName=".Main" />
+        <activity
+            android:name=".Main"
+            android:label="Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
